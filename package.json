@@ -1,0 +1,55 @@
+{
+  "name": "bugbuddy",
+  "displayName": "BugBuddy Error Rank",
+  "version": "0.0.1",
+  "publisher": "mohammad-bilal",
+  "description": "BugBuddy helps you understand syntax and runtime errors with simple explanations.",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+
+  "activationEvents": [
+    "onStartupFinished",
+    "onView:bugbuddyContainer",
+    "onCommand:bugbuddy.openTerminal",
+    "onCommand:bugbuddy.runFile",
+    "onLanguage:javascript",
+    "onLanguage:python",
+    "onLanguage:c"
+  ],
+
+  "main": "./extension.js",
+
+  "contributes": {
+    "commands": [
+      {
+        "command": "bugbuddy.openTerminal",
+        "title": "BugBuddy: Open Friendly Terminal"
+      },
+      {
+        "command": "bugbuddy.runFile",
+        "title": "BugBuddy: Run Active File"
+      }
+    ],
+
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "bugbuddyContainer",
+          "title": "BugBuddy",
+          "icon": "images/icon2.png"
+        }
+      ]
+    },
+
+    "views": {
+      "bugbuddyContainer": [
+        {
+          "id": "bugbuddy.errorRankView",
+          "name": "Error Rank"
+        }
+      ]
+    }
+  }
+}
